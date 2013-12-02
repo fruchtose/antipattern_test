@@ -6,4 +6,6 @@ class ClosureComment < ActiveRecord::Base
 
   has_many :ancestors, class_name: 'CommentPath', through: :ancestor_paths, source: 'ancestor'
   has_many :descendants, class_name: 'CommentPath', through: :descendant_paths, source: 'descendant'
+
+  validates_presence_of :comments
 end
